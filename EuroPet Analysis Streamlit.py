@@ -693,9 +693,10 @@ elif option == "6️⃣ | Predict the Future Pt. 3 🎢":
         if holiday_magic:
             with c2:
                 temp_magic = st.checkbox("Enable Magical Temperatures 🪄")
-                df["Temp_Magic"] = df["Temp"] * df["Holiday"]
             df["TV_Holiday_Magic"] = df["TV"] * df["Holiday"]
             df["Radio_Holiday_Magic"] = df["Radio"] * df["Holiday"]
+            if temp_magic:
+                df["Temp_Magic"] = df["Temp"] * df["Holiday"]
 
     selected_variables = st.multiselect(
         "Choose some exciting variables for regression analysis!",
